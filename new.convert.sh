@@ -1,3 +1,8 @@
+if [ "$(whoami)" != "root" ]
+then
+  echo "You have to run this script as Superuser!"
+  exit 1
+fi
 # create rootfs directory
 export PATH=$PATH:/sbin:/usr/sbin
 set -ex
