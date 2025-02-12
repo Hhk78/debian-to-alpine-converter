@@ -115,5 +115,5 @@ echo auto eth0 >> 31
 $busybox cat 31 >> /etc/network/interfaces
 $busybox sed '/source/d' -i /etc/network/interfaces
 $busybox rm -rf 31
-echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun."
+echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun. bir önceki sistem /debain içinde"
 # reboot -f
