@@ -159,7 +159,7 @@ depend() {
 
 start() {
     ebegin "Starting custom udev service"
-    sleep 5 && rc-service networking restart
+    sleep 0.3 && rc-service networking restart
     eend $?
 }
 EOF
@@ -170,5 +170,5 @@ rc-update add 3131 boot
 rc-update add 3131 sysinit
 
 
-echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun."
+echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun. bir önceki sistem /debain içinde"
 # reboot -f
