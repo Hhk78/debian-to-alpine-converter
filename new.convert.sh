@@ -4,7 +4,10 @@ then
   exit 1
 fi
 # create rootfs directory
+
 export PATH=$PATH:/sbin:/usr/sbin
+swapoff -a
+rm -rf /swap.img
 set -ex
 mkdir /rootfs
 cd /rootfs
@@ -58,8 +61,8 @@ $busybox cp -prf /debian/boot/grub /boot/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 sync
 
-/rootfs/bin/cat /debian/etc/network/interfaces > /etc/network/interfaces
-$busybox cp -prf /etc/network/interfaces /rootfs/etc/network/interfaces
+/rootfs/bin/cat /debian/etc/network/interfaces > /etc/network/interfaces || true
+#$busybox cp -prf /etc/network/interfaces /rootfs/etc/network/interfaces
 rc-update add networking boot
 rc-update add networking 
 rc-update add networking default
