@@ -151,7 +151,7 @@ echo "Interfaces file has been generated at /etc/network/interfaces"
 cat << 'EOF' > /etc/init.d/3131
 #!/sbin/openrc-run
 
-description="Custom udev startup script"
+description="Custom network startup script"
 
 depend() {
     after localmount
