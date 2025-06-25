@@ -78,7 +78,7 @@ rc-update add sshd boot
 rc-update add sshd default
 rc-update add sshd 
 /rootfs/bin/sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-echo "root:31" | chpasswd
+
 passwd root
 #echo 'GRUB_CMDLINE_LINUX="rootfstype=ext4 modules=ext4,sd-mod,network quiet"' >> /etc/default/grub
 echo 'features="ata base cdrom ext4 keymap kms mmc nvme raid scsi usb virtio eudev"' > /etc/mkinitfs/mkinitfs.conf
@@ -170,5 +170,6 @@ rc-update add 3131 boot
 rc-update add 3131 sysinit
 
 
-echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun. bir önceki sistem /debain içinde"
+echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun. bir önceki sistem /debain içinde passwd ile root şifresi belirleyin"
+passwd root
 # reboot -f
