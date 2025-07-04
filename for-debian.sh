@@ -76,8 +76,8 @@ rc-update add sshd boot
 rc-update add sshd default
 rc-update add sshd 
 /rootfs/bin/sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
-echo "root:31" | chpasswd
-passwd root
+
+
 #echo 'GRUB_CMDLINE_LINUX="rootfstype=ext4 modules=ext4,sd-mod,network quiet"' >> /etc/default/grub
 echo 'features="ata base cdrom ext4 keymap kms mmc nvme raid scsi usb virtio eudev"' > /etc/mkinitfs/mkinitfs.conf
 #sed -i '/^start_pre() {/,/^}/ s/^}/    \/sbin\/udevd \&\n    udevadm trigger -c add\n}/' /etc/init.d/udev
@@ -117,3 +117,4 @@ $busybox sed '/source/d' -i /etc/network/interfaces
 $busybox rm -rf 31
 echo "bitti. reboot -f atmadan önce yedek aldığınızdan emin olun. bir önceki sistem /debain içinde"
 # reboot -f
+passwd root
